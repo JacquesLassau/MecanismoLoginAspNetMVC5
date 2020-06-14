@@ -1,0 +1,38 @@
+﻿@{Layout = null;}
+
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <title>Acesso Restrito</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Content/Login.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<div class="sidenav">
+    <div class="login-main-text">
+        <h2>Application<br> Login Page</h2>
+        <p>Realize o Login ou Registre-se para ter acesso.</p>
+    </div>
+</div>
+<div class="main">
+    <div class="col-md-6 col-sm-12">
+        <div class="login-form">
+            @using (Html.BeginForm("Login", "AreaRestrita", FormMethod.Post))
+            {
+                <div class="form-group">
+                    <label>Usuário:</label>
+                    <input type="email" class="form-control" name="txtEmailUsuario" placeholder="Digite o E-mail" required>
+                </div>
+                <div class="form-group">
+                    <label>Senha:</label>
+                    <input type="password" class="form-control" name="txtSenhaUsuario" placeholder="Digite a Senha" required>
+                </div>
+                <button type="submit" class="btn btn-black" name="btnLogin" value="Login">Login</button>
+                <button type="submit" class="btn btn-secondary" disabled="disabled">Registre-se</button>
+            }
+        </div>
+    </div>
+</div>
